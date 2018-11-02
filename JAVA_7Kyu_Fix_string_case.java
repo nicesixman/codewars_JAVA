@@ -31,16 +31,19 @@ public class fixStringCase {
 		{
 			lowerWord = str.toLowerCase();
 			System.out.println(lowerWord);
+			return lowerWord;
 		}
 		else if (lower < upper)
 		{
 			upperWord = str.toUpperCase();
 			System.out.println(upperWord);
+			return upperWord;
 		}
 		else if (lower == upper)
 		{
 			lowerWord = str.toLowerCase();
 			System.out.println(lowerWord);
+			return lowerWord;
 		}
 		return str;
 	}
