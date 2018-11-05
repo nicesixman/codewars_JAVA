@@ -2,11 +2,11 @@ package codewars_7kyu_FixStringCase;
 
 import java.util.Scanner;
 
-public class fixStringCase {
+public class FixStringCase {
 	public static void main(String[] args) {
 		System.out.print("대소문자 섞어서 영단어 입력: ");
 		
-		// Scanner로 입력받은 inputWord를 wholeWord변수에 넣어줘야 한다.
+		// Scanner를 통해 입력받은 strInput을 객체로 만들어서 변수 str에 넣어줘야 한다.
 		Scanner strInput = new Scanner(System.in);
 		String str = strInput.nextLine();
 		strInput.close();
