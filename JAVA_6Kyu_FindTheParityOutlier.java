@@ -32,6 +32,25 @@ public class FindTheParityOutlier {
 					System.out.println(outlier);
 					return outlier;
 				}
+				// 배열 크기가 3일 때의 예외처리.
+				else if (i == 2 && (even == 2 && odd == 1))
+				{
+					if (integers[0] % 2 != 0)
+					{
+						System.out.println(integers[0]);
+						return integers[0];
+					}
+					else if (integers[1] % 2 != 0)
+					{
+						System.out.println(integers[1]);
+						return integers[1];
+					}
+					else
+					{
+						System.out.println("Error!");
+						return 0;
+					}
+				}
 			}
 			else if (integers[i] % 2 != 0)
 			{
@@ -41,6 +60,25 @@ public class FindTheParityOutlier {
 					outlier = integers[i];
 					System.out.println(outlier);
 					return outlier;
+				}
+				// 배열 크기가 3일 때의 예외처리.
+				else if (i == 2 && (odd == 2 && even == 1))
+				{
+					if (integers[0] % 2 == 0)
+					{
+						System.out.println(integers[0]);
+						return integers[0];
+					}
+					else if (integers[1] % 2 == 0)
+					{
+						System.out.println(integers[1]);
+						return integers[1];
+					}
+					else
+					{
+						System.out.println("Error!");
+						return 0;
+					}
 				}
 			}
 		}
