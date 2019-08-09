@@ -32,7 +32,9 @@ public class TheSupermarketQueue {
 	
 	public static int queueTime(ArrayList<Integer> CustomerList, int queue) {
 		// 배열을 queue 크기로 만든 다음, 각 칸마다 List를 기입.
+		ArrayList<Integer> CustomerList_Moved = new ArrayList<Integer>();
 		int makeArray[] = new int[queue];
+		int CustomerList_Moved_Min;
 		int output = 0;
 		
 		// queue가 1 이라면 단순하게 모든 Array값을 더하면 되므로 예외처리.
@@ -40,18 +42,32 @@ public class TheSupermarketQueue {
 		{
 			for (int i=0; i<CustomerList.size(); i++)
 				output += CustomerList.get(i);
+			// debugging
+			System.out.println(CustomerList.toString());
+			System.out.println(output);
+			return output;
 		}
 		
 		// queue가 2 이상일 때는 queue만큼 배열 생성하여 CustomerList로부터 값을 불러오면 된다.
 		else if (queue > 1)
 		{
-			
+			// 1차적으로 queue가 비어있으면 customer를 무조건 배치.
+			for (int i=0; i<queue; i++)
+			{
+				if (CustomerList.size() <= i)
+					break;
+				output += CustomerList.get(i);
+				makeArray[i] = CustomerList.get(i);
+				CustomerList_Moved.add(makeArray[i]);
+			}
+			// 배치 완료된 customer 수(Moved_Min) 중 최소값을 구하는 메소드.
+			CustomerList_Moved_Min = Collections.min(CustomerList_Moved);
+			// debugging
+			System.out.println(CustomerList_Moved.toString());
+			System.out.println(CustomerList_Moved_Min);
+			System.out.println(output);
+			return output;
 		}
-		
-		// debugging
-		System.out.println(CustomerList.toString());
-		System.out.println(queue);
-		System.out.println(output);
-		return output;
+		return 0;
 	}
 }
