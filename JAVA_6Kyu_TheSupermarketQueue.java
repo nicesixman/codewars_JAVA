@@ -35,6 +35,7 @@ public class TheSupermarketQueue {
 		ArrayList<Integer> CustomerList_Moved = new ArrayList<Integer>();
 		int makeArray[] = new int[queue];
 		int CustomerList_Moved_Min;
+		int CustomerList_Moved_Min_Index;
 		int output = 0;
 		
 		// queue가 1 이라면 단순하게 모든 Array값을 더하면 되므로 예외처리.
@@ -60,11 +61,13 @@ public class TheSupermarketQueue {
 				makeArray[i] = CustomerList.get(i);
 				CustomerList_Moved.add(makeArray[i]);
 			}
-			// 배치 완료된 customer 수(Moved_Min) 중 최소값을 구하는 메소드.
+			// 배치 완료된 customer 수(Moved_Min) 중 최소값 및 최소값의 index를 구하는 메소드.
 			CustomerList_Moved_Min = Collections.min(CustomerList_Moved);
+			CustomerList_Moved_Min_Index = CustomerList_Moved.indexOf(CustomerList_Moved_Min);
 			// debugging
 			System.out.println(CustomerList_Moved.toString());
 			System.out.println(CustomerList_Moved_Min);
+			System.out.println(CustomerList_Moved_Min_Index);
 			System.out.println(output);
 			return output;
 		}
